@@ -1,0 +1,36 @@
+{
+    "name": "Restaurante",
+    "short_name": "Restaurant",
+    "description": "Aplicacion sobre comida de colombia",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#FFF8E1",
+    "theme_color": "#FFF8E1",
+    "lang": "es",
+    "icons": [
+      {
+        "src": "src/icons/movil.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "src/icons/pc.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "screenshots": [
+    {
+      "src": "src/screenshots/s1.png",
+      "sizes": "1920x1020",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "src/screenshots/s2.png",
+      "sizes": "320x699",
+      "type": "image/png"      
+    }
+  ]
+  }
+  

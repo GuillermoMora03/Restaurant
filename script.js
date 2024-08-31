@@ -1,63 +1,54 @@
-const checkPermission = () => {
-    if(!'serviceWorker' in navigator) {
-        throw new Error("No soporto el service worker")
+if ('Notification' in window && navigator.serviceWorker) {
+  Notification.requestPermission().then(permission => {
+    if (permission === 'granted') {
+      console.log('Permiso de notificaciones concedido.');
+      subscribeUserToPush();
+    } else {
+      console.log('Permiso de notificaciones denegado.');
     }
-
-    if(!('Notification' in window)) {
-        throw new Error("No soporto las notificaciones")
-    }
+  });
 }
 
-const registerSW = async() => {
-    const registration = await navigator.serviceWorker.register('sw.js');
-    return registration;
+function subscribeUserToPush() {
+  navigator.serviceWorker.ready.then(function(registration) {
+    const subscribeOptions = {
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array('BH1rT6Y-59sms3YT13VY4umsgzBOGvuIjignGHLpz77mjCr0GUkic_UcgJZJ-MugTmV_LKtWG4f2PPy_oDxSfE4')
+    };
+
+    return registration.pushManager.subscribe(subscribeOptions);
+  })
+  .then(function(pushSubscription) {
+    console.log('Usuario suscrito:', JSON.stringify(pushSubscription));
+    // Aquí podrías enviar la suscripción a tu servidor
+  })
+  .catch(function(error) {
+    console.error('Fallo en la suscripción:', error);
+  });
 }
 
-const requestNotificationPermission = async() => {
-    const permission = await Notification.requestPermission();
+function urlBase64ToUint8Array(base64String) {
+  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+  const rawData = window.atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
 
-    if(permission !== 'granted') {
-        throw new Error('Permiso denegado');
-    }else{
-        new Notification("Hola mundo");
-    }
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
 }
-
-checkPermission();
-
-const main = async () => {
-    checkPermission()
-    const registration = await registerSW();
-    registration.showNotification("Service Worker");
-}
-
-// main();
-
-
 
 function toggleMenu() {
     const navLinks = document.getElementById('navbar-links');
     navLinks.classList.toggle('show');
 }
 
-
-function openModal(formType) {
-    var modal = document.getElementById("modal");
-    var loginForm = document.getElementById("login-form");
-    var registerForm = document.getElementById("register-form");
-
-    if (formType === 'login') {
-        loginForm.classList.add("active");
-        registerForm.classList.remove("active");
-    } else if (formType === 'register') {
-        registerForm.classList.add("active");
-        loginForm.classList.remove("active");
-    }
-
-    modal.style.display = "block";
-}
-
-function closeModal() {
-    var modal = document.getElementById("modal");
-    modal.style.display = "none";
-}
+// Simular una notificación push desde el frontend
+navigator.serviceWorker.ready.then(function(registration) {
+  registration.showNotification('Promocion del Dia', {
+    body: 'Solo por hoy tendremos buffete por solo $169 por persona adulta, niños $119.',
+    icon: 'src/icons/promo.png',
+    badge: 'src/icons/alert.png',
+  });
+});

@@ -12,11 +12,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: #003366; /* Azul oscuro de la bandera colombiana */
+    background-color: #9A3B3B;
 }
 
 .logo {
-    height: 50px;
+    height: 70px;
     width: auto;
     border-radius: 5px;
 }
@@ -42,13 +42,13 @@
 }
 
 .nav-links a:hover {
-    background-color: #FFD700; /* Amarillo vibrante para el hover */
+    background-color: #C08261; /* Amarillo vibrante para el hover */
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #003366; /* Fondo azul oscuro */
+    background-color: #9A3B3B; /* Fondo azul oscuro */
     border-radius: 5px;
     min-width: 160px;
     z-index: 1;
@@ -68,7 +68,7 @@
 }
 
 .dropdown-content a:hover {
-    background-color: #FFD700; /* Amarillo vibrante para el hover */
+    background-color: #C08261; /* Amarillo vibrante para el hover */
 }
 
 .dropdown:hover .dropdown-content {
@@ -88,7 +88,7 @@
     .nav-links {
         flex-direction: column;
         width: 100%;
-        background-color: #003366;
+        background-color: #9A3B3B;
         position: absolute;
         top: 70px;
         left: -100%;
@@ -115,7 +115,7 @@
 
 /* Styling for Main Content */
 body {
-    background-color: #FFF8E1; /* Fondo crema */
+    background-color: #F2ECBE; /* Fondo crema */
     color: #333;
     font-size: 18px;
     padding: 20px;
@@ -123,9 +123,13 @@ body {
 }
 
 h2 {
-    color: #003366; /* Azul oscuro */
+    color: #9A3B3B;
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 43px;
+}
+
+h3{
+    font-size: 25px;
 }
 
 /* Image Styling */
@@ -196,26 +200,6 @@ label {
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 5px;
+p{
+    font-size: 23px;
 }
-
-button[type="submit"] {
-    background-color: #003366;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button[type="submit"]:hover {
-    background-color: #0051a3;
-}
-

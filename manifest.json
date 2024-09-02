@@ -4,8 +4,8 @@
     "description": "Aplicacion sobre comida de colombia",
     "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#FFF8E1",
-    "theme_color": "#FFF8E1",
+    "background_color": "#F2ECBE",
+    "theme_color": "#F2ECBE",
     "lang": "es",
     "icons": [
       {

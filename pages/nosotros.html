@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Sobre Nosotros</title>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <a href="../index.html"><img src="../src/images/logo.png" alt="logo" class="logo"></a>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                &#9776;
+            </div>
+            <ul id="navbar-links" class="nav-links">
+                <li class="dropdown">
+                    <a>Platillos</a>
+                    <ul class="dropdown-content">
+                        <li><a href="./entradas.html">Entrada</a></li>
+                        <li><a href="./plato_fuerte.html">Plato fuerte</a></li>
+                        <li><a href="./postres.html">Postre</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a>Bebidas</a>
+                    <ul class="dropdown-content">
+                        <li><a href="./bebidas_frias.html">Frío</a></li>
+                        <li><a href="./bebidas_calientes.html">Caliente</a></li>
+                    </ul>
+                </li>
+                <li><a href="./nosotros.html">Sobre nosotros</a></li>               
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <h1>Sobre Nosotros</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Conoce Nuestra Historia</h2>
+            <p>En nuestro restaurante colombiano, nos enorgullece ofrecer los sabores auténticos de Colombia, rescatando las recetas tradicionales que han pasado de generación en generación. Desde nuestras entradas hasta nuestros postres, cada plato es preparado con ingredientes frescos y de la más alta calidad, traídos directamente de Colombia.</p>
+            <p>Nuestra misión es ofrecer una experiencia culinaria única, donde cada bocado te transporte a las tierras de Colombia, con sus sabores vibrantes y cultura rica.</p>
+            <p>¡Te invitamos a disfrutar de nuestra cocina y ser parte de nuestra familia!</p>
+        </section>
+    </main>
+    <section>
+        <h2>Encuéntranos</h2>
+        <p>Nos encontramos en la plaza Tizara en Tizayuca, Hidalgo para que disfrutes de la auténtica comida colombiana.</p>
+        <div class="map-container">
+            <iframe                 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1876.1350574534433!2d-98.95675745372411!3d19.87081293174346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smx!4v1725291668982!5m2!1sen!2smx"
+                width="800"
+                height="600" 
+                style="border:0;" 
+                allowfullscreen=""
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">               
+            </iframe>
+        </div>
+    </section>
+    <section class="opening-hours">
+        <h2>Horarios de Apertura</h2>
+        <ul>
+            <li>Martes a Viernes: 11:00 AM - 9:00 PM</li>
+            <li>Sábado: 12:00 PM - 9:00 PM</li>
+            <li>Domingo: 12:00 PM - 8:00 PM</li>
+        </ul>
+    </section>    
+    <script src="../script.js"></script>
+</body>
+</html>

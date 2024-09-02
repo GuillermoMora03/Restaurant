@@ -14,9 +14,9 @@ if ('Notification' in window) {
   }
   
   function toggleMenu() {
-      const navLinks = document.getElementById('navbar-links');
-      navLinks.classList.toggle('show');
-  }
+    const navLinks = document.getElementById('navbar-links');
+    navLinks.classList.toggle('show');
+}
   
   function notifyServiceWorker() {
       navigator.serviceWorker.ready.then(registration => {

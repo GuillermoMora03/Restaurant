@@ -193,3 +193,19 @@ p {
         padding-left: 0;
     }
 }
+
+.specialties{
+    padding: 20px;
+    background-color: #E2C799;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.specialty-item{
+    margin-bottom: 20px;
+}
+
+.specialty-item img{
+    width: 100%;
+    border-radius: 10px;
+}

@@ -130,7 +130,7 @@ h2 {
 
 /* Image Styling */
 img {
-    width: 30%; /* Ajusta la imagen para que cubra el 90% del ancho de la página */
+    width: 50%; /* Ajusta la imagen para que cubra el 90% del ancho de la página */
     height: auto;
     max-width: 1200px; /* Establece un máximo para mantener la calidad en pantallas grandes */
     border-radius: 10px; /* Añade bordes redondeados para darle estilo */

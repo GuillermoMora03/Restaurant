@@ -48,31 +48,14 @@ self.addEventListener('fetch', function(event){
         }).catch(() => caches.match('/index.html')) // Removido "this"
     );
 });
+  
 
-// self.addEventListener('push', function(event) {
-//     const data = event.data ? event.data.json() : {};
-//     const title = data.title || 'Oferta del Restaurante';
-//     const options = {
-//       body: data.body || 'Tenemos nuevas ofertas en nuestros platillos colombianos. ¡No te las pierdas!',
-//       icon: data.icon || '/images/icon.png',
-//       badge: data.badge || '/images/badge.png',
-//       data: data.url || '/'
-//     };
-  
-//     event.waitUntil(
-//       self.registration.showNotification(title, options)
-//     );
-//   });
-  
-//   self.addEventListener('notificationclick', function(event) {
-//     event.notification.close();
-//     event.waitUntil(
-//       clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function(clientList) {
-//         if (clientList.length > 0) {
-//           return clientList[0].focus();
-//         }
-//         return clients.openWindow(event.notification.data);
-//       })
-//     );
-//   });
-  
+self.addEventListener('message', (event) => {
+    if (event.data && event.data.action === 'sendNotification') {
+        self.registration.showNotification('Promocion del Dia', {
+                body: 'Solo por hoy tendremos buffet por solo $169 por persona adulta, niños $119.',
+                icon: 'src/icons/promo.png',
+                badge: 'src/icons/alert.png'
+        });
+    }
+});
